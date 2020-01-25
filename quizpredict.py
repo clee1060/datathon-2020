@@ -9,8 +9,6 @@ import statistics
 import pickle
 import sys
 
-#!/usr/bin/env python
-
 def predict(q35, q36, q40):
 
     clf = pickle.load(open("svmweb.p", 'rb'))
