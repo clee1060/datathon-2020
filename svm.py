@@ -5,38 +5,61 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.decomposition import PCA
 from scipy.stats import pearsonr
+import statistics
 
 import os
 from matplotlib import pyplot as plt
 
 
-divorce = np.loadtxt("divorce.csv", delimiter=";", skiprows=1)
-pca = PCA(1)
-div_trans = pca.fit_transform(divorce[:,0:-1])
+all = []
+limit = []
+limworst = []
+pcasc = []
 
-Xtrain, Xtest, ytrain, ytest, PCAtrain, PCAtest = train_test_split(divorce[:,0:-1], divorce[:,-1], div_trans, train_size=.65)
+for i in range(1000):
+    divorce = np.loadtxt("divorce.csv", delimiter=";", skiprows=1)
+    pca = PCA(1)
+    div_trans = pca.fit_transform(divorce[:,0:-1])
 
-svmall = SVC(C = 50, kernel="linear")
-svmall.fit(Xtrain, ytrain)
+    Xtrain, Xtest, ytrain, ytest, PCAtrain, PCAtest = train_test_split(divorce[:,0:-1], divorce[:,-1], div_trans, train_size=.65)
 
-predyall = svmall.predict(Xtest)
+    svmall = SVC(C = 50, kernel="linear")
+    svmall.fit(Xtrain, ytrain)
 
-print("All Questions: " + str(accuracy_score(ytest, predyall)))
+    predyall = svmall.predict(Xtest)
 
-questions = [34, 35]
+    #print("All Questions: " + str(accuracy_score(ytest, predyall)))
 
-svm3 = SVC(C = 4, kernel="linear")
-svm3.fit(Xtrain[:,questions], ytrain)
+    questions = [34, 35, 39]
 
-predy3 = svm3.predict(Xtest[:,questions])
+    svm3 = SVC(C = 4, kernel="linear")
+    svm3.fit(Xtrain[:,questions], ytrain)
 
-print("Limited Questions: " + str(accuracy_score(ytest,predy3)))
+    predy3 = svm3.predict(Xtest[:,questions])
 
-svmpca = SVC(C=50, kernel="linear")
-svmpca.fit(PCAtrain, ytrain)
+    wquestions = [5,6,45]
 
-predypca = svmpca.predict(PCAtest)
+    svmworst = SVC(C=4, kernel="linear")
+    svmworst.fit(Xtrain[:,wquestions], ytrain)
 
-print("PCA: " + str(accuracy_score(ytest, predypca)))
+    predyworst = svmworst.predict(Xtest[:,wquestions])
 
-print("35/36 Correlation: " + str(pearsonr(divorce[:,34],divorce[:,35])))
+    #print("Limited Questions: " + str(accuracy_score(ytest,predy3)))
+
+    svmpca = SVC(C=50, kernel="linear")
+    svmpca.fit(PCAtrain, ytrain)
+
+    predypca = svmpca.predict(PCAtest)
+
+    #print("PCA: " + str(accuracy_score(ytest, predypca)))
+
+    #print("35/36 Correlation: " + str(pearsonr(divorce[:,34],divorce[:,35])))
+
+    all.append(accuracy_score(ytest, predyall))
+    limit.append(accuracy_score(ytest,predy3))
+    limworst.append(accuracy_score(ytest, predyworst))
+    pcasc.append(accuracy_score(ytest, predypca))
+print("All: " + str(statistics.mean(all)))
+print("Limit: " + str(statistics.mean(limit)))
+print("Limit worst: " + str(statistics.mean(limworst)))
+print("PCA: " + str(statistics.mean(pcasc)))
