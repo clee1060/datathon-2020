@@ -24,6 +24,7 @@ print(pca.components_[0,:].argsort() + 1)
 
 pca2 = PCA(2)
 div_trans2 = pca2.fit_transform(divorce[:,0:-1])
+plt.savefig("pca1.png")
 plt.figure()
 
 plt.scatter(div_trans2[ydivorce,0],div_trans2[ydivorce,1],c="r")
@@ -32,6 +33,6 @@ plt.title("Principal Components (2) on Divorce Questions")
 plt.xlabel("Component 1")
 plt.ylabel("Component 2")
 plt.legend(["Divorce","No Divorce"])
-
+plt.savefig("pca2.png")
 
 plt.show()
