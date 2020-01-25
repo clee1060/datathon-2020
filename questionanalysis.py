@@ -34,24 +34,51 @@ question_39_n = count(q_39_n)
 plt.bar(index, question_34_y, bar_width, color="r", label = "Divorced")
 plt.bar(index + bar_width, question_34_n, bar_width, color="g", label = "Not Divorced")
 plt.title("Answers to Question 34")
-plt.xlabel("Component 1")
-plt.ylabel("Component 1")
+plt.xlabel("Answer to the Survey Question")
+plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
 plt.figure()
 
 plt.bar(index, question_35_y, bar_width, color="r", label = "Divorced")
 plt.bar(index + bar_width, question_35_n, bar_width, color="g", label = "Not Divorced")
 plt.title("Answers to Question 35")
-plt.xlabel("Component 1")
-plt.ylabel("Component 1")
+plt.xlabel("Answer to the Survey Question")
+plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
 plt.figure()
 
 plt.bar(index, question_39_y, bar_width, color="r", label = "Divorced")
 plt.bar(index+ bar_width, question_39_n, bar_width, color="g", label = "Not Divorced")
 plt.title("Answers to Question 39")
-plt.xlabel("Component 1")
-plt.ylabel("Component 1")
+plt.xlabel("Answer to the Survey Question")
+plt.ylabel("Number of People")
+plt.legend(["Divorce","No Divorce"])
+plt.figure()
+
+#Bad
+q_6_y = [divorce[i][5] for i in range(0, 170) if divorce[i][-1] == 1]
+q_6_n = [divorce[i][5] for i in range(0, 170) if divorce[i][-1] == 0]
+q_7_y = [divorce[i][6] for i in range(0, 170) if divorce[i][-1] == 1]
+q_7_n = [divorce[i][6] for i in range(0, 170) if divorce[i][-1] == 0]
+
+question_6_y = count(q_6_y)
+question_6_n = count(q_6_n)
+question_7_y = count(q_7_y)
+question_7_n = count(q_7_n)
+
+plt.bar(index, question_6_y, bar_width, color="r", label = "Divorced")
+plt.bar(index + bar_width, question_6_n, bar_width, color="g", label = "Not Divorced")
+plt.title("Answers to Question 6")
+plt.xlabel("Answer to the Survey Question")
+plt.ylabel("Number of People")
+plt.legend(["Divorce","No Divorce"])
+plt.figure()
+
+plt.bar(index, question_7_y, bar_width, color="r", label = "Divorced")
+plt.bar(index+ bar_width, question_7_n, bar_width, color="g", label = "Not Divorced")
+plt.title("Answers to Question 7")
+plt.xlabel("Answer to the Survey Question")
+plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
 
 plt.show()
