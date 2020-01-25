@@ -11,7 +11,6 @@ import sys
 from tkinter import *
 from tkinter.ttk import *
 
-<<<<<<< HEAD
 #!/usr/bin/env python
 
 from tkinter import *
@@ -48,8 +47,6 @@ rad3_3 = Radiobutton(window, text='3', value=2, variable=var3)
 rad4_3 = Radiobutton(window, text='4', value=3, variable=var3)
 rad5_3 = Radiobutton(window, text='5', value=4, variable=var3)
 
-=======
->>>>>>> e6a6995d68af511858d25182e36c8dcc7ebd6825
 def predict(q35, q36, q40):
 
     clf = pickle.load(open("svmweb.p", 'rb'))
@@ -63,14 +60,14 @@ def clicked():
     print(int(var1.get()), int(var2.get()), int(var3.get()))
     divorce = predict(int(var1.get()), int(var2.get()), int(var3.get()))
     if divorce:
-        div = Label(window, text="You're getting a divorce").grid(column=0, row=8)
+        div = Label(window, text="   You're getting a divorce  ").grid(column=0, row=8)
     else:
         div = Label(window, text="You're not getting a divorce").grid(column=0, row=8)
 
 
 
 btn_1 = Button(window, text="Click Me", command=clicked)
-a_1 = Label(window ,text = "35. I can insult my spouse during our arguments.").grid(row = 0,column = 0)
+a_1 = Label(window ,text = "35. I can insult my spouse when we argue.").grid(row = 0,column = 0)
 rad1_1.grid(column=1, row=0)
 rad2_1.grid(column=2, row=0)
 rad3_1.grid(column=3, row=0)
@@ -78,7 +75,7 @@ rad4_1.grid(column=4, row=0)
 rad5_1.grid(column=5, row=0)
 
 btn_2 = Button(window, text="Click Me", command=clicked)
-a_2 = Label(window ,text = "36. I can be humiliating when we argue.").grid(row = 2,column = 0)
+a_2 = Label(window ,text = "36. I can humiliate my spouse when we argue.").grid(row = 2,column = 0)
 rad1_2.grid(column=1, row=2)
 rad2_2.grid(column=2, row=2)
 rad3_2.grid(column=3, row=2)
@@ -86,7 +83,7 @@ rad4_2.grid(column=4, row=2)
 rad5_2.grid(column=5, row=2)
 
 btn_3 = Button(window, text="Click Me", command=clicked)
-a_3 = Label(window ,text = "40. We're just starting and argument before I know what's going on.").grid(row = 4,column = 0)
+a_3 = Label(window ,text = "40. I start to argue with my spouse before I know what's going on.").grid(row = 4,column = 0)
 rad1_3.grid(column=1, row=4)
 rad2_3.grid(column=2, row=4)
 rad3_3.grid(column=3, row=4)

@@ -9,7 +9,6 @@ import statistics
 import pickle
 
 import os
-from matplotlib import pyplot as plt
 
 
 all = []
