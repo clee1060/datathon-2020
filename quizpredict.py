@@ -11,6 +11,7 @@ import sys
 from tkinter import *
 from tkinter.ttk import *
 
+<<<<<<< HEAD
 #!/usr/bin/env python
 
 from tkinter import *
@@ -47,6 +48,8 @@ rad3_3 = Radiobutton(window, text='3', value=2, variable=var3)
 rad4_3 = Radiobutton(window, text='4', value=3, variable=var3)
 rad5_3 = Radiobutton(window, text='5', value=4, variable=var3)
 
+=======
+>>>>>>> e6a6995d68af511858d25182e36c8dcc7ebd6825
 def predict(q35, q36, q40):
 
     clf = pickle.load(open("svmweb.p", 'rb'))

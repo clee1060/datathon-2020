@@ -37,6 +37,7 @@ plt.title("35. I can insult my spouse during our arguments.")
 plt.xlabel("Answer to the Survey Question")
 plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
+plt.savefig("q35.png")
 plt.figure()
 
 plt.bar(index, question_36_y, bar_width, color="r", label = "Divorced")
@@ -45,6 +46,7 @@ plt.title("36. I can be humiliating when we argue.")
 plt.xlabel("Answer to the Survey Question")
 plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
+plt.savefig("q36.png")
 plt.figure()
 
 plt.bar(index, question_40_y, bar_width, color="r", label = "Divorced")
@@ -53,6 +55,7 @@ plt.title("40. We're just starting an argument before I know what's going on.")
 plt.xlabel("Answer to the Survey Question")
 plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
+plt.savefig("q40.png")
 plt.figure()
 
 #Bad
@@ -72,6 +75,7 @@ plt.title("6. We don't have time at home as partners.")
 plt.xlabel("Answer to the Survey Question")
 plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
+plt.savefig("q6.png")
 plt.figure()
 
 plt.bar(index, question_7_y, bar_width, color="r", label = "Divorced")
@@ -80,5 +84,6 @@ plt.title("7. We are like two strangers who share the same \n environment at hom
 plt.xlabel("Answer to the Survey Question")
 plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
+plt.savefig("q7.png")
 
 plt.show()
