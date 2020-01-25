@@ -4,6 +4,7 @@ from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.decomposition import PCA
+from scipy.stats import pearsonr
 
 import os
 from matplotlib import pyplot as plt
@@ -37,3 +38,5 @@ svmpca.fit(PCAtrain, ytrain)
 predypca = svmpca.predict(PCAtest)
 
 print("PCA: " + str(accuracy_score(ytest, predypca)))
+
+print("35/36 Correlation: " + str(pearsonr(divorce[:,34],divorce[:,35])))
