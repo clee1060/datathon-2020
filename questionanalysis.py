@@ -15,41 +15,41 @@ def count (x):
     return list
 
 
-q_34_y = [divorce[i][33] for i in range(0, 170) if divorce[i][-1] == 1]
 q_35_y = [divorce[i][34] for i in range(0, 170) if divorce[i][-1] == 1]
-q_39_y = [divorce[i][38] for i in range(0, 170) if divorce[i][-1] == 1]
+q_36_y = [divorce[i][35] for i in range(0, 170) if divorce[i][-1] == 1]
+q_40_y = [divorce[i][39] for i in range(0, 170) if divorce[i][-1] == 1]
 
-q_34_n = [divorce[i][33] for i in range(0, 170) if divorce[i][-1] == 0]
 q_35_n = [divorce[i][34] for i in range(0, 170) if divorce[i][-1] == 0]
-q_39_n = [divorce[i][38] for i in range(0, 170) if divorce[i][-1] == 0]
+q_36_n = [divorce[i][35] for i in range(0, 170) if divorce[i][-1] == 0]
+q_40_n = [divorce[i][39] for i in range(0, 170) if divorce[i][-1] == 0]
 
-question_34_y = count(q_34_y)
-question_34_n = count(q_34_n)
 question_35_y = count(q_35_y)
 question_35_n = count(q_35_n)
-question_39_y = count(q_39_y)
-question_39_n = count(q_39_n)
+question_36_y = count(q_36_y)
+question_36_n = count(q_36_n)
+question_40_y = count(q_40_y)
+question_40_n = count(q_40_n)
 
 # Good
-plt.bar(index, question_34_y, bar_width, color="r", label = "Divorced")
-plt.bar(index + bar_width, question_34_n, bar_width, color="g", label = "Not Divorced")
-plt.title("I can use offensive expressions during our discussions.")
-plt.xlabel("Answer to the Survey Question")
-plt.ylabel("Number of People")
-plt.legend(["Divorce","No Divorce"])
-plt.figure()
-
 plt.bar(index, question_35_y, bar_width, color="r", label = "Divorced")
 plt.bar(index + bar_width, question_35_n, bar_width, color="g", label = "Not Divorced")
-plt.title("I can insult my spouse during our discussions.")
+plt.title("35. I can insult my spouse during our arguments.")
 plt.xlabel("Answer to the Survey Question")
 plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
 plt.figure()
 
-plt.bar(index, question_39_y, bar_width, color="r", label = "Divorced")
-plt.bar(index+ bar_width, question_39_n, bar_width, color="g", label = "Not Divorced")
-plt.title("Our discussions often occur suddenly.")
+plt.bar(index, question_36_y, bar_width, color="r", label = "Divorced")
+plt.bar(index + bar_width, question_36_n, bar_width, color="g", label = "Not Divorced")
+plt.title("36. I can be humiliating when we argue.")
+plt.xlabel("Answer to the Survey Question")
+plt.ylabel("Number of People")
+plt.legend(["Divorce","No Divorce"])
+plt.figure()
+
+plt.bar(index, question_40_y, bar_width, color="r", label = "Divorced")
+plt.bar(index+ bar_width, question_40_n, bar_width, color="g", label = "Not Divorced")
+plt.title("40. We're just starting an argument before I know what's going on.")
 plt.xlabel("Answer to the Survey Question")
 plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
@@ -68,7 +68,7 @@ question_7_n = count(q_7_n)
 
 plt.bar(index, question_6_y, bar_width, color="r", label = "Divorced")
 plt.bar(index + bar_width, question_6_n, bar_width, color="g", label = "Not Divorced")
-plt.title("We don't have time at home as partners.")
+plt.title("6. We don't have time at home as partners.")
 plt.xlabel("Answer to the Survey Question")
 plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
@@ -76,7 +76,7 @@ plt.figure()
 
 plt.bar(index, question_7_y, bar_width, color="r", label = "Divorced")
 plt.bar(index+ bar_width, question_7_n, bar_width, color="g", label = "Not Divorced")
-plt.title("We are like two strangers who share the same \n environment at home rather than family.")
+plt.title("7. We are like two strangers who share the same \n environment at home rather than family.")
 plt.xlabel("Answer to the Survey Question")
 plt.ylabel("Number of People")
 plt.legend(["Divorce","No Divorce"])
