@@ -1,4 +1,4 @@
-# datathon-2020
+# Principle Indicators of Divorce
 **Repo for the Rice Datathon 2020**
 
 **About the Project**
