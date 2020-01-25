@@ -6,6 +6,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.decomposition import PCA
 from scipy.stats import pearsonr
 import statistics
+import pickle
 
 import os
 from matplotlib import pyplot as plt
@@ -63,3 +64,5 @@ print("All: " + str(statistics.mean(all)))
 print("Limit: " + str(statistics.mean(limit)))
 print("Limit worst: " + str(statistics.mean(limworst)))
 print("PCA: " + str(statistics.mean(pcasc)))
+
+pickle.dump(svm3, open("svmweb.p", 'wb'))
