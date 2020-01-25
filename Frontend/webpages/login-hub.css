@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300&display=swap');
+
+nav {
+    font-family: Nunito;
+}
+
+h1 {
+    font-family: Nunito;
+    color: #002366;
+    padding-top: 2rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.2px solid #5E6062;
+}
+
+.card {
+    font-family: Nunito;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    display: block;
+}
+
+.btn {
+    margin-bottom: 0.5rem;
+}
+
+form {
+    padding-top: 2rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding-bottom: 1rem;
+    display: block;
+}
+
+.btn-group {
+    display: block;
+}
+
+.form-group {
+    display: block;
+}
