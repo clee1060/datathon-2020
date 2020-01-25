@@ -1,5 +1,4 @@
 import numpy as np
-import pandas
 import sklearn
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
@@ -7,9 +6,11 @@ from sklearn.model_selection import train_test_split
 import os
 from matplotlib import pyplot as plt
 
-#os.chdir("/Users/matthewbrun/Spring 2020/Datathon/")
-
-
 divorce = np.loadtxt("divorce.csv", delimiter=";", skiprows=1)
+Xtrain, Xtest, ytrain, ytest = train_test_split(divorce[:,0:-1], divorce[:,-1], train_size=.5)
+
+svm = SVC()
+svm.fit(Xtrain, ytrain)
+
 
 

@@ -1,8 +1,6 @@
 import numpy as np
-import pandas
 import sklearn
 from sklearn.decomposition import PCA
-import os
 from matplotlib import pyplot as plt
 
 divorce = np.loadtxt("divorce.csv", delimiter=";", skiprows=1)
