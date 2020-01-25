@@ -5,9 +5,6 @@ from sklearn.decomposition import PCA
 import os
 from matplotlib import pyplot as plt
 
-os.chdir("/Users/matthewbrun/Spring 2020/Datathon/")
-
-
 divorce = np.loadtxt("divorce.csv", delimiter=";", skiprows=1)
 pca = PCA(1)
 div_trans = pca.fit_transform(divorce[:,0:-1])
